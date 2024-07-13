@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'export',
-    basePath: "/nextjs-github-pages",
+    basePath: "/China-podcast-tiny-web",
     images: {
         unoptimized: true,
     },
