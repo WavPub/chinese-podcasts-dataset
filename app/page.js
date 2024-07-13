@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Mic, Music, Clock, FileText, CheckCircle, Star, Headphones, Radio,BarChart as BC,AudioLines,Drama } from 'lucide-react';
 
@@ -32,12 +32,61 @@ const DataPoint = ({ Icon, title, value }) => (
 
 
 export default function Home() {
+  const [isHovering, setIsHovering] = useState(false);
+  const scrollRef = useRef(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [scrollDirection, setScrollDirection] = useState(1);
+
+
+
+  const cards = [
+    { title: "津津乐道", img: "/china-podcast-tiny-web/jinjinledao.png" },
+    { title: "不叁不肆", img: "/china-podcast-tiny-web/busanbusi.png" },
+    { title: "科技乱炖", img: "/china-podcast-tiny-web/kejiluandun.png" },
+    { title: "津津有味", img: "/china-podcast-tiny-web/jinjinyouwei.png" },
+
+  ];
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer || isHovering) return;
+
+    let animationId;
+
+    const scroll = () => {
+      setScrollPosition((prevPosition) => {
+        const newPosition = prevPosition + scrollDirection;
+        const containerWidth = scrollContainer.clientWidth;
+        const totalWidth = scrollContainer.scrollWidth;
+        const maxScroll = totalWidth - containerWidth;
+
+        if (newPosition >= maxScroll) {
+          setScrollDirection(-1); // Change direction to left
+          return maxScroll;
+        } else if (newPosition <= 0) {
+          setScrollDirection(1); // Change direction to right
+          return 0;
+        } else {
+          scrollContainer.scrollLeft = newPosition;
+          return newPosition;
+        }
+      });
+
+      animationId = requestAnimationFrame(scroll);
+    };
+
+    animationId = requestAnimationFrame(scroll);
+
+    return () => cancelAnimationFrame(animationId);
+  }, [isHovering, scrollDirection, cards]);
+
+
   return (
       <div className="bg-gray-100 min-h-screen">
         <header className="bg-blue-600 text-white py-12 px-4">
           <div className="container mx-auto text-center">
-            <h1 className="text-4xl font-bold mb-4">ChinaPodcastTiny</h1>
-            <p className="text-xl">Advancing Natural Speech Generation in Mandarin Chinese</p>
+            <h1 className="text-4xl font-bold mb-4">China Podcast Tiny Datasets</h1>
+            <p className="text-xl">推进普通话自然语音生成技术</p>
           </div>
         </header>
 
@@ -52,10 +101,10 @@ export default function Home() {
                 这⼀局限性的主要原因之⼀是当前的语⾳⽣成模型主要基于有声读物等正式朗读⻛格的语⾳数据集进⾏训练。然⽽,现实中的⼈类语⾳,尤其是在⽇常对话中,很少遵循这种标准化的模式。相反,它展现出更多样化和⾃发的说话⻛格,包括呼吸、停顿、重复、语速变化和情感变化等特征。因此,亟需⼀个包含更多样化语⾳⻛格的新数据集,以推动该领域向⽣成更⾃然、更接近⼈类的语⾳⽅向发展。
               </p>
               <p className="text-gray-700 leading-relaxed mt-4">
-               <b>经过对用于训练语音模型的数据进行深入调查后，我们发现由于高质量语音数据集的稀缺，许多模型通过爬取影视网站的资源来增加数据的多样性。然而，这些数据的质量无法得到保障，并且存在潜在的法律风险。</b>
+               <b>我们发现由于高质量语音数据集的稀缺，许多模型通过爬取影视网站的资源来增加数据的多样性。然而，这些数据的质量无法得到保障，并且存在潜在的法律风险。</b>
               </p>
               <p className="text-gray-700 leading-relaxed mt-4">
-                鉴于此,我们构建了一个已授权可以进行AI模型训练的中文播客数据集。
+                鉴于此,我们构建了一个<b>已授权可以进行AI模型训练</b>的中文播客数据集。
               </p>
             </div>
           </section>
@@ -197,6 +246,30 @@ export default function Home() {
             </div>
           </section>
 
+          <section className="mb-16">
+            <h2 className="text-3xl font-semibold mb-8 text-center">已授权的播客</h2>
+            <div className="relative w-full overflow-hidden">
+              <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10"></div>
+              <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10"></div>
+              <div
+                  ref={scrollRef}
+                  className="flex overflow-x-hidden"
+                  onMouseEnter={() => setIsHovering(true)}
+                  onMouseLeave={() => setIsHovering(false)}
+              >
+                {[...cards,...cards,...cards].map((card, index) => (
+                    <div
+                        key={index}
+                        className="flex-shrink-0 w-64 h-72 bg-white shadow-lg rounded-lg m-4 p-4 transition-transform hover:scale-105"
+                    >
+                      <h3 className="text-xl font-bold mb-2">{card.title}</h3>
+                      <img src={card.img} alt={card.title}></img>
+                    </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
           <section>
             <h2 className="text-3xl font-semibold mb-8 text-center">开始使用</h2>
             <div className="text-center">
@@ -216,5 +289,5 @@ export default function Home() {
           </div>
         </footer>
       </div>
-  );
-}
+    );
+  }

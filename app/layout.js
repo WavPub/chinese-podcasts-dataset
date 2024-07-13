@@ -2,8 +2,8 @@ import "./globals.css";
 
 
 export const metadata = {
-  title: "ChinaPodcastTiny Dataset",
-  description: "Advancing Natural Speech Generation in Mandarin Chinese",
+  title: "China Podcast Tiny Datasets",
+  description: "推进普通话自然语音生成技术",
 };
 
 export default function RootLayout({ children }) {
