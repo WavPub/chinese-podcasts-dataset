@@ -41,10 +41,10 @@ export default function Home() {
 
 
   const cards = [
-    { title: "津津乐道", img: "/images/podcast/jinjinledao.png" },
-    { title: "不叁不肆", img: "/images/podcast/busanbusi.png" },
-    { title: "科技乱炖", img: "/images/podcast/kejiluandun.png" },
-    { title: "津津有味", img: "/images/podcast/jinjinyouwei.png" },
+    { title: "津津乐道", img: "/podcast/jinjinledao.png" },
+    { title: "不叁不肆", img: "/podcast/busanbusi.png" },
+    { title: "科技乱炖", img: "/podcast/kejiluandun.png" },
+    { title: "津津有味", img: "/podcast/jinjinyouwei.png" },
 
   ];
 
