@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Mic, Music, Clock, FileText, CheckCircle, Star, Headphones, Radio,BarChart as BC,AudioLines,Drama } from 'lucide-react';
+import Image from 'next/image'
 
 
 
@@ -40,10 +41,10 @@ export default function Home() {
 
 
   const cards = [
-    { title: "津津乐道", img: "/china-podcast-tiny-web/jinjinledao.png" },
-    { title: "不叁不肆", img: "/china-podcast-tiny-web/busanbusi.png" },
-    { title: "科技乱炖", img: "/china-podcast-tiny-web/kejiluandun.png" },
-    { title: "津津有味", img: "/china-podcast-tiny-web/jinjinyouwei.png" },
+    { title: "津津乐道", img: "/images/podcast/jinjinledao.png" },
+    { title: "不叁不肆", img: "/images/podcast/busanbusi.png" },
+    { title: "科技乱炖", img: "/images/podcast/kejiluandun.png" },
+    { title: "津津有味", img: "/images/podcast/jinjinyouwei.png" },
 
   ];
 
@@ -263,7 +264,8 @@ export default function Home() {
                         className="flex-shrink-0 w-64 h-72 bg-white shadow-lg rounded-lg m-4 p-4 transition-transform hover:scale-105"
                     >
                       <h3 className="text-xl font-bold mb-2">{card.title}</h3>
-                      <img src={card.img} alt={card.title}></img>
+                      <Image src={card.img} alt={card.title} width={400}
+                             height={400}></Image>
                     </div>
                 ))}
               </div>

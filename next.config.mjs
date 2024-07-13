@@ -2,8 +2,10 @@
 const nextConfig = {
     output: 'export',
     basePath: "/china-podcast-tiny-web",
+    assetPrefix: "/china-podcast-tiny-web/",
     images: {
-        unoptimized: true,
+        loader:'custom',
+        loaderFile: './local_image_loader.js',
     },
 
 };
