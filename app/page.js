@@ -143,7 +143,7 @@ export default function Home() {
                 <DataPoint Icon={Radio} title="授权播客数量" value="8"/>
                 <DataPoint Icon={Headphones} title="节目期数" value="16"/>
                 <DataPoint Icon={Clock} title="总时长" value="4.66小时"/>
-                <DataPoint Icon={Database} title="条目数" value="2500对"/>
+                <DataPoint Icon={Database} title="条目数" value="1606对"/>
               </div>
             </div>
           </section>
