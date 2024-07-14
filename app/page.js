@@ -97,25 +97,21 @@ export default function Home() {
           </div>
         </header>
 
-        <main className="container mx-auto py-12 px-4 font-serif">
+        <main className="container mx-auto py-12 px-4">
           <section className="mb-16">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h2 className="text-2xl font-semibold mb-4">背景</h2>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed font-serif">
                 最近的两年中,语⾳⽣成研究在各种⽣成模型和⼤规模训练数据的推动下取得了显著进展。像Bark、XTTS、ChatTTS、fish-speech等模型通过⼤幅扩展数据集和模型规模,在(零样本)语⾳⽣成⽅⾯取得了⻓⾜进步,在学术数据集上实现了⾼相似度、⾼⾳质和⾼⾃然度。然⽽,⽣成的语⾳仍然⽆法完全模仿现实世界中⼈类的⾃然语⾳。
               </p>
-              <p className="text-gray-700 leading-relaxed mt-4">
+              <p className="text-gray-700 leading-relaxed mt-4 font-serif">
                 这⼀局限性的主要原因之⼀是当前的语⾳⽣成模型主要基于有声读物等正式朗读⻛格的语⾳数据集进⾏训练。然⽽,现实中的⼈类语⾳,尤其是在⽇常对话中,很少遵循这种标准化的模式。相反,它展现出更多样化和⾃发的说话⻛格,包括呼吸、停顿、重复、语速变化和情感变化等特征。因此,亟需⼀个包含更多样化语⾳⻛格的新数据集,以推动该领域向⽣成更⾃然、更接近⼈类的语⾳⽅向发展。
               </p>
               <p className="text-gray-700 leading-relaxed mt-4">
-               <b>我们发现由于高质量语音数据集的稀缺，许多模型通过爬取影视网站的资源来增加数据的多样性。然而，这些数据的质量无法得到保障，并且存在潜在的法律风险。</b>
+               <b className="font-bold">我们发现由于高质量语音数据集的稀缺，许多模型通过爬取影视网站的资源来增加数据的多样性。然而，这些数据的质量无法得到保障，并且存在潜在的法律风险。</b>
               </p>
               <p className="text-gray-700 leading-relaxed mt-4">
-                鉴于此，我们构建了一个<b>已获得授权用于AI模型训练</b>的中文播客数据集。该数据集依托中文播客领域最大的独立第三方内容托管平台<a href="https://wav.pub">声湃®</a>的数据和主播授权，为研究人员提供了一个多样化、高质量的中文播客资源。
-
-
-
-
+                <span className="font-serif">鉴于此，我们构建了一个</span><b className="font-bold">已获得授权用于AI模型训练</b><span className="font-serif">的中文播客数据集。该数据集依托中文播客领域最大的独立第三方内容托管平台<a href="https://wav.pub">声湃®</a>的数据和主播授权，为研究人员提供了一个多样化、高质量的中文播客资源。</span>
               </p>
             </div>
           </section>
