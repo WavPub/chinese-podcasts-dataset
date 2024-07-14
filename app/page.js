@@ -51,6 +51,7 @@ export default function Home() {
     { title: "品质生活", img: "/podcast/pzsh.jpg" },
     { title: "厂长来了", img: "/podcast/czll.jpg" },
     { title: "安全出口FM", img: "/podcast/exitfm.jpg" },
+    { title: "Web Worker", img: "/podcast/webworker.png" },
 
   ];
 
