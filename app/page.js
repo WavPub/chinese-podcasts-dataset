@@ -140,7 +140,7 @@ export default function Home() {
                 该数据集是对公众开放的最小数据集，以此来展示数据的多样性和高质量，以及为研究人员提供一个评估数据集的机会。本数据集可申请免费下载，但需遵守数据使用协议。
               </p>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <DataPoint Icon={Radio} title="授权播客数量" value="8"/>
+                <DataPoint Icon={Radio} title="授权播客数量" value="4"/>
                 <DataPoint Icon={Headphones} title="节目期数" value="16"/>
                 <DataPoint Icon={Clock} title="总时长" value="4.66小时"/>
                 <DataPoint Icon={Database} title="条目数" value="1606对"/>
@@ -272,6 +272,7 @@ export default function Home() {
                   </tr>
                   </tbody>
                 </table>
+                <p className="pt-2">注：字符错误率 (CER) 是通过抽取前100条音频，人工转译文本与原始转译文本进行计算得到。</p>
               </div>
             </div>
           </section>
