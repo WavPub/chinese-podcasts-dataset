@@ -1,7 +1,8 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { Mic, Music, Clock, FileText, CheckCircle, Star, Headphones, Radio,BarChart as BC,AudioLines,Drama } from 'lucide-react';
+import {  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { Mic, Music, Clock, FileText, CheckCircle, Star, Headphones, Radio,BarChart as BC,AudioLines,Drama,Device  } from 'lucide-react';
+import { Database } from 'lucide-react';
 import Image from 'next/image'
 
 
@@ -45,6 +46,10 @@ export default function Home() {
     { title: "不叁不肆", img: "/podcast/busanbusi.png" },
     { title: "科技乱炖", img: "/podcast/kejiluandun.png" },
     { title: "津津有味", img: "/podcast/jinjinyouwei.png" },
+    { title: "记者下班", img: "/podcast/jzxb.png" },
+    { title: "拼娃时代", img: "/podcast/pwsd.jpg" },
+    { title: "品质生活", img: "/podcast/pzsh.jpg" },
+    { title: "厂长来了", img: "/podcast/czll.jpg" },
 
   ];
 
@@ -105,7 +110,11 @@ export default function Home() {
                <b>我们发现由于高质量语音数据集的稀缺，许多模型通过爬取影视网站的资源来增加数据的多样性。然而，这些数据的质量无法得到保障，并且存在潜在的法律风险。</b>
               </p>
               <p className="text-gray-700 leading-relaxed mt-4">
-                鉴于此,我们构建了一个<b>已授权可以进行AI模型训练</b>的中文播客数据集。
+                鉴于此，我们构建了一个<b>已获得授权用于AI模型训练</b>的中文播客数据集。该数据集依托中文播客领域最大的独立第三方内容托管平台<a href="https://wav.pub">声湃®</a>的数据和主播授权，为研究人员提供了一个多样化、高质量的中文播客资源。
+
+
+
+
               </p>
             </div>
           </section>
@@ -114,21 +123,41 @@ export default function Home() {
             <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg shadow-md">
               <h2 className="text-2xl font-bold text-blue-700 mb-4">愿景</h2>
               <p className="text-lg text-blue-800 leading-relaxed">
-                这个数据集的创建旨在推动语音生成技术向更自然、更贴近真实人类对话的方向发展。我们相信，通过使用这个多样化、高质量的中文播客数据集，研究人员可以开发出能够生成更自然、更富表现力的语音合成模型，从而在各种应用场景中提供更好的用户体验。
+                这个数据集的创建，承载着我们对语音生成技术未来的美好期望。我们希望通过这一多样化、高质量的中文播客数据集，推动语音生成技术向更自然、更贴近人类真实对话的方向发展。我们坚信，研究人员会利用这个数据集，开发出更加自然和富有表现力的语音合成模型，从而在各种应用场景中带来更出色的用户体验。
+              
+              </p>
+              <p className="text-lg text-blue-800 leading-relaxed">
+                
+                <br/>作为创作者服务平台，我们深刻理解创作者在AI时代的诉求和困扰。我们怀着对创作者的尊重与感激之情，仅在获得内容创作者授权的前提下提供数据，并通过费用分成和AI服务转化等形式，坚持与创作者分享AI时代的红利。
               </p>
             </div>
           </section>
 
           <section className="mb-16">
-            <h2 className="text-3xl font-semibold mb-8 text-center">数据集概览</h2>
+            <h2 className="text-3xl font-semibold mb-8 text-center">公开评估数据集概览</h2>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <p className="text-lg text-gray-700 mb-6 text-center">
-                该数据集是对公众开放的最小数据集，以此来展示数据的多样性和高质量。
+                该数据集是对公众开放的最小数据集，以此来展示数据的多样性和高质量，以及为研究人员提供一个评估数据集的机会。本数据集可申请免费下载，但需遵守数据使用协议。
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <DataPoint Icon={Radio} title="授权播客数量" value="4"/>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <DataPoint Icon={Radio} title="授权播客数量" value="8"/>
                 <DataPoint Icon={Headphones} title="节目期数" value="16"/>
                 <DataPoint Icon={Clock} title="总时长" value="4.66小时"/>
+                <DataPoint Icon={Database} title="条目数" value="2500对"/>
+              </div>
+            </div>
+          </section>
+
+          <section className="mb-16">
+            <h2 className="text-3xl font-semibold mb-8 text-center">全量数据集概览</h2>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <p className="text-lg text-gray-700 mb-6 text-center">
+              全量数据集可在申请并付费后使用。我们尊重内容创作者的权利，您支付的费用中有一部分将会分配给内容创作者。
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <DataPoint Icon={Radio} title="授权播客数量" value="200+"/>
+                <DataPoint Icon={Headphones} title="节目期数" value="26000+"/>
+                <DataPoint Icon={Clock} title="总时长" value="150万小时+"/>
               </div>
             </div>
           </section>
@@ -249,6 +278,8 @@ export default function Home() {
 
           <section className="mb-16">
             <h2 className="text-3xl font-semibold mb-8 text-center">已授权的播客</h2>
+            
+            
             <div className="relative w-full overflow-hidden">
               <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10"></div>
               <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10"></div>
@@ -269,6 +300,12 @@ export default function Home() {
                     </div>
                 ))}
               </div>
+              <div className="text-center">
+            <button
+                  className="bg-purple-500 text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-purple-700 transition duration-300">
+                <a href="https://om2lztg2mssownic.mikecrm.com/4178Ebv">您是播客创作者？点此授权数据，获得收益！</a>
+              </button>
+            </div>
             </div>
           </section>
 
@@ -278,7 +315,7 @@ export default function Home() {
               <p className="mb-4">准备好推进您的语音生成研究了吗？</p>
               <button
                   className="bg-blue-600 text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-blue-700 transition duration-300">
-                下载数据集
+                <a href="https://om2lztg2mssownic.mikecrm.com/OBaFAgh">下载数据集</a>
               </button>
             </div>
           </section>
@@ -286,7 +323,7 @@ export default function Home() {
 
         <footer className="bg-gray-800 text-white py-8 px-4">
           <div className="container mx-auto text-center">
-            <p>&copy; 2024 <a target="_blank" href="https://dao.fm/">津津乐道播客网络</a> 保留所有权利</p>
+            <p>&copy; 2024 <a target="_blank" href="https://wav.pub/">声湃®</a> 保留所有权利</p>
             <p>本项目由 <a target="_blank" href="https://github.com/GanymedeNil">GanymedeNil</a> 驱动</p>
           </div>
         </footer>
