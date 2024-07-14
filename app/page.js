@@ -91,7 +91,8 @@ export default function Home() {
       <div className="bg-gray-100 min-h-screen">
         <header className="bg-blue-600 text-white py-12 px-4">
           <div className="container mx-auto text-center">
-            <h1 className="text-4xl font-bold mb-4">China Podcast Datasets</h1>
+            <h1 className="text-4xl font-bold mb-4">Chinese Podcasts Dataset</h1>
+            <h1 className="text-3xl font-bold mb-4">中文播客语音数据集</h1>
             <p className="text-xl">推进普通话自然语音生成技术</p>
           </div>
         </header>
@@ -214,7 +215,7 @@ export default function Home() {
           </section>
 
           <section className="mb-16">
-            <h2 className="text-3xl font-semibold mb-8 text-center">音频长度分布</h2>
+            <h2 className="text-3xl font-semibold mb-8 text-center">公开评估数据集音频长度分布</h2>
             <div className="bg-white p-4 rounded-lg shadow-md">
               <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={audioLengthData}>
@@ -229,7 +230,7 @@ export default function Home() {
           </section>
 
           <section className="mb-16">
-            <h2 className="text-3xl font-semibold mb-8 text-center">数据集质量</h2>
+            <h2 className="text-3xl font-semibold mb-8 text-center">公开评估数据集质量</h2>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-4">音频质量 (DNS-MOS P.835 OVRL)</h3>
               <div className="overflow-x-auto">
