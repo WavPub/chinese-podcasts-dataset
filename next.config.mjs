@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'export',
-    basePath: "/chinese-podcast-dataset",
-    assetPrefix: "/chinese-podcast-dataset/",
+    basePath: "/chinese-podcasts-dataset",
+    assetPrefix: "/chinese-podcasts-dataset/",
     images: {
         loader:'custom',
         loaderFile: './local_image_loader.js',
