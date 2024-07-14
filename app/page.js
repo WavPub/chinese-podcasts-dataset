@@ -91,7 +91,7 @@ export default function Home() {
       <div className="bg-gray-100 min-h-screen">
         <header className="bg-blue-600 text-white py-12 px-4">
           <div className="container mx-auto text-center">
-            <h1 className="text-4xl font-bold mb-4">China Podcast Tiny Datasets</h1>
+            <h1 className="text-4xl font-bold mb-4">China Podcast Datasets</h1>
             <p className="text-xl">推进普通话自然语音生成技术</p>
           </div>
         </header>
@@ -300,11 +300,11 @@ export default function Home() {
                     </div>
                 ))}
               </div>
-              <div className="text-center">
-            <button
-                  className="bg-purple-500 text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-purple-700 transition duration-300">
-                <a href="https://om2lztg2mssownic.mikecrm.com/4178Ebv">您是播客创作者？点此授权数据，获得收益！</a>
-              </button>
+              <div className="text-center mt-8">
+                <button
+                      className="bg-purple-500 text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-purple-700 transition duration-300">
+                    <a href="https://om2lztg2mssownic.mikecrm.com/4178Ebv">您是播客创作者？点此授权数据，获得收益！</a>
+                </button>
             </div>
             </div>
           </section>

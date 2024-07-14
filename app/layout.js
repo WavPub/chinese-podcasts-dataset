@@ -2,7 +2,7 @@ import "./globals.css";
 
 
 export const metadata = {
-  title: "China Podcast Tiny Datasets",
+  title: "China Podcast Datasets",
   description: "推进普通话自然语音生成技术",
 };
 
