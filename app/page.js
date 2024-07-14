@@ -279,18 +279,20 @@ export default function Home() {
 
           <section className="mb-16">
             <h2 className="text-3xl font-semibold mb-8 text-center">已授权的播客</h2>
-            
-            
+
+
             <div className="relative w-full overflow-hidden">
-              <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10"></div>
+              <div
+                  className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10"></div>
+              <div
+                  className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10"></div>
               <div
                   ref={scrollRef}
                   className="flex overflow-x-hidden"
                   onMouseEnter={() => setIsHovering(true)}
                   onMouseLeave={() => setIsHovering(false)}
               >
-                {[...cards,...cards,...cards].map((card, index) => (
+                {[...cards, ...cards, ...cards].map((card, index) => (
                     <div
                         key={index}
                         className="flex-shrink-0 w-64 h-72 bg-white shadow-lg rounded-lg m-4 p-4 transition-transform hover:scale-105"
@@ -301,12 +303,12 @@ export default function Home() {
                     </div>
                 ))}
               </div>
-              <div className="text-center mt-8">
-                <button
-                      className="bg-purple-500 text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-purple-700 transition duration-300">
-                    <a href="https://om2lztg2mssownic.mikecrm.com/4178Ebv">您是播客创作者？点此授权数据，获得收益！</a>
-                </button>
             </div>
+            <div className="text-center mt-8">
+              <button
+                  className="bg-purple-500 text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-purple-700 transition duration-300">
+                <a href="https://om2lztg2mssownic.mikecrm.com/4178Ebv">您是播客创作者？点此授权数据，获得收益！</a>
+              </button>
             </div>
           </section>
 
