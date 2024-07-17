@@ -156,7 +156,7 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <DataPoint Icon={Radio} title="授权播客数量" value="200+"/>
                 <DataPoint Icon={Headphones} title="节目期数" value="26000+"/>
-                <DataPoint Icon={Clock} title="总时长" value="150万小时+"/>
+                <DataPoint Icon={Clock} title="总时长" value="8万小时+"/>
               </div>
             </div>
           </section>
